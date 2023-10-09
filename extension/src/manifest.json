@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube QoExtension",
+  "description": "AGH-TUFIQoE-2023 YouTube Experiment || Chrome Extension by Rafal Figlus",
+  "background": {
+    "service_worker": "background.bundle.js"
+  },
+  "action": {
+    "default_icon": "32.png"
+  },
+  "icons": {
+    "16": "16.png",
+    "32": "32.png",
+    "48": "48.png",
+    "64": "64.png",
+    "128": "128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "16.png",
+        "32.png",
+        "48.png",
+        "64.png",
+        "128.png",
+        "blurred.png"
+      ],
+      "matches": []
+    },
+    {
+      "resources": [],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.bundle.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": ["http://127.0.0.1/*"],
+  "permissions": [
+    "scripting",
+    "tabs",
+    "activeTab",
+    "storage",
+    "debugger",
+    "webNavigation",
+    "unlimitedStorage",
+    "background",
+    "declarativeNetRequest"
+  ]
+}

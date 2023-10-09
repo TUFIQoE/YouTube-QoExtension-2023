@@ -1,0 +1,1 @@
+export const SECRET_KEY = "secret-key" // DO NOT USE IN PRODUCTION
