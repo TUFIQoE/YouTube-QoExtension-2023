@@ -77,13 +77,21 @@ export const useExperimentStart = () => {
     return result;
   }
 
+  function factorial(n: number): number {
+    if (n === 0) {
+      return 1;
+    } else {
+      return n * factorial(n - 1);
+    }
+  }
+
   const getBitrateScenario = (experiment_id: number): [number, number, number, number, number] => {
     const values: [number, number, number] = [375e2, 75e3, 125e3] // bytes per seconds
     const highest_value: number = 125e7
 
     let scenarios = generatePermutations(values)
 
-    return [highest_value, ...scenarios[experiment_id % 6], highest_value]
+    return [highest_value, ...scenarios[experiment_id % factorial(values.length)], highest_value]
   }
 
   const formik = useFormik({
