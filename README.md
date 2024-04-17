@@ -99,3 +99,9 @@ For example the _buffering_ event is send to the server at defined intervals as 
 
 Exemplary log related to video seeking:
 `seeking, buffering, buffering, buffering, ..., buffering, seeked`.
+
+# Acknowledgments
+
+The software development leading to this repository has received funding from the Norwegian Financial Mechanism 2014-2021 under project 2019/34/H/ST6/00599.
+
+
